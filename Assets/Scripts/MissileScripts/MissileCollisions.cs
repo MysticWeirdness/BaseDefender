@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MissileCollisions : MonoBehaviour
 {
-    [SerializeField] private BaseScript baseScript;
+    private BaseScript baseScript;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private Color startingColor;
@@ -17,6 +17,7 @@ public class MissileCollisions : MonoBehaviour
         spriteRenderer = transform.GetComponentInChildren<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         startingColor = spriteRenderer.color;
+        baseScript = GameObject.FindWithTag("Base").GetComponent<BaseScript>();
     }
 
     private void Update()

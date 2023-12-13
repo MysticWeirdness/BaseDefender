@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class GoToPlayer : MonoBehaviour
 {
-    [SerializeField] private Transform playerLocation;
+    private Transform playerLocation;
 
     private float missileSpeed = 1f;
     private float rotZ;
     private Vector3 diff;
 
+    private void Start()
+    {
+        playerLocation = GameObject.FindWithTag("Base").GetComponent<Transform>();
+    }
     private void Update()
     {
         diff = playerLocation.position - transform.position;
