@@ -7,13 +7,16 @@ public class MissileCollisions : MonoBehaviour
 {
     private BaseScript baseScript;
     private SpriteRenderer spriteRenderer;
+    private AudioController audioController;
     private Rigidbody2D rb;
+    [SerializeField] private GameObject explosionEffect;
     private Color startingColor;
     private float health = 3;
     private float hitIndicatorDur = 0.1f;
 
     private void Awake()
     {
+        audioController = GameObject.FindWithTag("AudioController").GetComponent<AudioController>();
         spriteRenderer = transform.GetComponentInChildren<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         startingColor = spriteRenderer.color;
@@ -32,7 +35,7 @@ public class MissileCollisions : MonoBehaviour
        if (collision.gameObject.tag == "Base")
         {
             baseScript.Damage();
-            Destroy(gameObject);
+            Death();
         }
        else if (collision.gameObject.tag == "Projectile")
         {
@@ -43,6 +46,8 @@ public class MissileCollisions : MonoBehaviour
 
     private void Death()
     {
+        audioController.Explosion();
+        Destroy(Instantiate(explosionEffect, transform.position, Quaternion.identity), 0.5f);
         Destroy(gameObject);
     }
     private void Damage()

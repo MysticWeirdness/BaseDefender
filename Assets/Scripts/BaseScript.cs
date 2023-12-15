@@ -4,29 +4,43 @@ using UnityEngine;
 
 public class BaseScript : MonoBehaviour
 {
-    private uint health = 10;
+    private float health = 0f;
+    private float healthDecrement = 0.001f;
+    public bool isDead = false;
+    private Transform spriteTransform;
+    [SerializeField] private GameController gameController;
     [SerializeField] private AudioController controller;
 
+    private void Start()
+    {
+        spriteTransform = transform.GetComponentInChildren<Transform>();
+    }
     public void Damage()
     {
-        health--;
-        if(health <= 0)
+        controller.Heartbeat();
+        health += 0.15f;
+        if (health >= 0.5f)
         {
             Death();
         }
-        controller.Heartbeat();
     }
 
+    private void FixedUpdate()
+    {
+        if(health > 0)
+        {
+            health = health - healthDecrement;
+        }
+    }
+
+    public float GetHealth()
+    {
+        return health;
+    }
     private void Death()
     {
-        Destroy(gameObject);
-    }
-
-    public void Update()
-    {
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
+        isDead = true;
+        gameController.Lose();
+        spriteTransform.gameObject.SetActive(false);
     }
 }

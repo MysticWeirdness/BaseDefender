@@ -13,7 +13,7 @@ public class DayCycleController : MonoBehaviour
     private void Start()
     {
         DayMode();
-        StartCoroutine(DayCycleTimer());
+ //       StartCoroutine(DayCycleTimer());
     }
 
     private IEnumerator DayCycleTimer()

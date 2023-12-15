@@ -83,7 +83,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f040aa98a85116d4abd1f64db5ec37f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLocation: {fileID: 0}
 --- !u!50 &7200848953435482705
 Rigidbody2D:
   serializedVersion: 4
@@ -123,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 677bdee14d963464cbb030f768fe489b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseScript: {fileID: 0}
+  explosionEffect: {fileID: 271944894674421756, guid: 8c12e3a236b353a4b95830483feb1454, type: 3}
 --- !u!1 &5332437614297376178
 GameObject:
   m_ObjectHideFlags: 0
