@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - PostProcessing
   - AudioController
+  - HUD
   layers:
   - Default
   - TransparentFX

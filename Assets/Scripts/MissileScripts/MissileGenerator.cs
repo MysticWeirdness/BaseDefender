@@ -9,14 +9,13 @@ public class MissileGenerator : MonoBehaviour
     private float duration = 1f;
     private int amountAlreadySpawned = 0;
     private int amountOfEnemies;
-    private int monitorWave;
-
-    [SerializeField] private GameObject missilePrefab;
+    [SerializeField] private List<GameObject> enemies = new List<GameObject>();
     [SerializeField] private GameController gameController;
 
     private void Start()
     {
         amountOfEnemies = gameController.wave * 10;
+        gameController.EnemyDestroyed(0, amountOfEnemies);
         StartCoroutine("MissileTimer");
     }
 
@@ -24,13 +23,18 @@ public class MissileGenerator : MonoBehaviour
     {
         amountAlreadySpawned = 0;
         amountOfEnemies = gameController.wave * 10;
+        StartCoroutine("MissileTimer");
     }
 
+    public int GetTotalEnemies()
+    {
+        return amountOfEnemies;
+    }
     private IEnumerator MissileTimer()
     {
         yield return new WaitForSeconds(duration);
         amountAlreadySpawned++;
-        Instantiate(missilePrefab, new Vector3(UnityEngine.Random.Range(-xLimit, xLimit), yGenerator, 0f), Quaternion.identity);
+        Instantiate(UnityEngine.Random.Range(0, enemies.Count - 1), new Vector3(UnityEngine.Random.Range(-xLimit, xLimit), yGenerator, 0f), Quaternion.identity);
         if(amountAlreadySpawned < amountOfEnemies)
         {
             StartCoroutine(MissileTimer());

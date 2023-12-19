@@ -6,10 +6,12 @@ public class BaseScript : MonoBehaviour
 {
     private float health = 0f;
     private float healthDecrement = 0.001f;
+    private int enemiesDestroyed = 0;
     public bool isDead = false;
     private Transform spriteTransform;
     [SerializeField] private GameController gameController;
-    [SerializeField] private AudioController controller;
+    [SerializeField] private AudioController audioController;
+    [SerializeField] private MissileGenerator missileGenerator;
 
     private void Start()
     {
@@ -17,7 +19,7 @@ public class BaseScript : MonoBehaviour
     }
     public void Damage()
     {
-        controller.Heartbeat();
+        audioController.Heartbeat();
         health += 0.15f;
         if (health >= 0.5f)
         {
@@ -25,6 +27,19 @@ public class BaseScript : MonoBehaviour
         }
     }
 
+    public void ResetEnemiesDestroyed()
+    {
+        enemiesDestroyed = 0;
+    }
+    public void DestroyedEnemy()
+    {
+        enemiesDestroyed++;
+        gameController.EnemyDestroyed(enemiesDestroyed, missileGenerator.GetTotalEnemies());
+        if (enemiesDestroyed == missileGenerator.GetTotalEnemies())
+        {
+            gameController.IncrementWave();
+        }
+    }
     private void FixedUpdate()
     {
         if(health > 0)

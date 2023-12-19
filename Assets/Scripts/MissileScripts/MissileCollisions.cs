@@ -11,7 +11,7 @@ public class MissileCollisions : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private GameObject explosionEffect;
     private Color startingColor;
-    private float health = 3;
+    [SerializeField] private float health;
     private float hitIndicatorDur = 0.1f;
 
     private void Awake()
@@ -44,8 +44,10 @@ public class MissileCollisions : MonoBehaviour
         }
     }
 
+    
     private void Death()
     {
+        baseScript.DestroyedEnemy();
         audioController.Explosion();
         Destroy(Instantiate(explosionEffect, transform.position, Quaternion.identity), 0.5f);
         Destroy(gameObject);
