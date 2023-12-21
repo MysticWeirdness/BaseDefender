@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private BaseScript baseScript;
     public void IncrementWave()
     {
+        if(wave >= 5)
+        {
+            SceneManager.LoadSceneAsync(6);
+        }
         wave++;
         UIHandler.UpdateWave(wave);
         missileGenerator.OnNewWave();
@@ -32,6 +37,6 @@ public class GameController : MonoBehaviour
 
     public void Win()
     {
-         WinUI.SetActive(true);
+        WinUI.SetActive(true);
     }
 }

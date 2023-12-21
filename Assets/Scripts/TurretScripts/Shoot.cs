@@ -7,9 +7,14 @@ public class Shoot : MonoBehaviour
     [SerializeField] FollowMouse followMouse;
     [SerializeField] TurretHandler turretHandler;
     [SerializeField] private GameObject projectile;
+    private AudioController audioController;
 
     private float cooldownDuration = 0.1f;
 
+    private void Start()
+    {
+        audioController = GetComponent<AudioController>(); 
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))

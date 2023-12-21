@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6099886801707556780}
   - component: {fileID: 5451636755474047951}
-  - component: {fileID: 6017108497493661615}
   - component: {fileID: 7200848953435482705}
   - component: {fileID: 8438493039534950614}
+  - component: {fileID: 6356174191498190333}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -71,18 +71,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &6017108497493661615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4699920287255100359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f040aa98a85116d4abd1f64db5ec37f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &7200848953435482705
 Rigidbody2D:
   serializedVersion: 4
@@ -124,6 +112,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 271944894674421756, guid: 8c12e3a236b353a4b95830483feb1454, type: 3}
   health: 3
+--- !u!114 &6356174191498190333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699920287255100359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f040aa98a85116d4abd1f64db5ec37f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5332437614297376178
 GameObject:
   m_ObjectHideFlags: 0

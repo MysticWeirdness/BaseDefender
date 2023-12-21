@@ -34,7 +34,7 @@ public class MissileGenerator : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         amountAlreadySpawned++;
-        Instantiate(UnityEngine.Random.Range(0, enemies.Count - 1), new Vector3(UnityEngine.Random.Range(-xLimit, xLimit), yGenerator, 0f), Quaternion.identity);
+        Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Count - 1)], new Vector3(UnityEngine.Random.Range(-xLimit, xLimit), yGenerator, 0f), Quaternion.identity);
         if(amountAlreadySpawned < amountOfEnemies)
         {
             StartCoroutine(MissileTimer());

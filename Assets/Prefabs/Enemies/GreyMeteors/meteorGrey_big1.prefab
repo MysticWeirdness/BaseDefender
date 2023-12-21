@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4301065497086760994}
   - component: {fileID: 4103673725005804502}
   - component: {fileID: 376334280671547397}
-  - component: {fileID: 7891550360172329176}
-  - component: {fileID: 308789833212975299}
+  - component: {fileID: 8763558799003802913}
+  - component: {fileID: 2596291725485099364}
   m_Layer: 0
   m_Name: meteorGrey_big1
   m_TagString: Untagged
@@ -173,7 +173,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &7891550360172329176
+--- !u!114 &8763558799003802913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,20 +182,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8541587066845593202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 677bdee14d963464cbb030f768fe489b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e5f739e293668a4584011fe3562efe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2596291725485099364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8541587066845593202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9020fce104c458e44be05a98024ff9b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 271944894674421756, guid: 8c12e3a236b353a4b95830483feb1454, type: 3}
   health: 6
---- !u!114 &308789833212975299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8541587066845593202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f040aa98a85116d4abd1f64db5ec37f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -6,6 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/splash1.unity
+    guid: c8bb446d13757ef49802c02795541883
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 73230b3685677814eb4ae9867dca4bd6
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 55bcff95fd19be144b161103ca43a2d2
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: d33219f983c40cc45b6059dbf71ff0f6
+  - enabled: 1
+    path: Assets/Scenes/Cutscene1.unity
+    guid: 71be396f30408fd43970be426056c50d
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/DivineIntervention.unity
+    guid: bc3328b72bc6e174d810ecd8b0bc27d3
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: f8b739992567a37408b305282ff1b242
+  - enabled: 1
+    path: Assets/Scenes/Cutscene3.unity
+    guid: 5eafe400a4cf49a4a93135601945732b
   m_configObjects: {}
